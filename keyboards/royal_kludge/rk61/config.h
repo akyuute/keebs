@@ -12,3 +12,4 @@
 #define BACKLIGHT_PAL_MODE      1
 
 #define MK_COMBINED
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
