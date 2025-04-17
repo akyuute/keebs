@@ -11,5 +11,4 @@
 #define BACKLIGHT_PWM_CHANNEL   1
 #define BACKLIGHT_PAL_MODE      1
 
-
-#define MK_3_SPEED
+#define MK_COMBINED
