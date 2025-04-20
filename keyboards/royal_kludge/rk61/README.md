@@ -28,10 +28,10 @@ the person to ask for help with implementing RGB and other features.
 I just found yutaoz's code for my version of this
 keyboard and began making my preferred layout.
 
-![The base layer of my custom VimWin layout](/keymaps/vimwin/img/rk61_vimwin_layer0.png)
-![The VimWin layout's numbers and symbols layer](/keymaps/vimwin/img/rk61_vimwin_layer1.png)
-![The VimWin layout's text movement layer](/keymaps/vimwin/img/rk61_vimwin_layer2.png)
-![The VimWin layout's mouse movement layer](/keymaps/vimwin/img/rk61_vimwin_layer3.png)
-![The VimWin layout's numpad layer](/keymaps/vimwin/img/rk61_vimwin_layer4.png)
-![The VimWin layout's unfinished special functions layer](/keymaps/vimwin/img/rk61_vimwin_layer5.png)
+![The base layer of my custom VimWin layout](/keyboards/royal_kludge/rk61/keymaps/vimwin/img/rk61_vimwin_layer0.png)
+![The VimWin layout's numbers and symbols layer](/keyboards/royal_kludge/rk61/keymaps/vimwin/img/rk61_vimwin_layer1.png)
+![The VimWin layout's text movement layer](/keyboards/royal_kludge/rk61/keymaps/vimwin/img/rk61_vimwin_layer2.png)
+![The VimWin layout's mouse movement layer](/keyboards/royal_kludge/rk61/keymaps/vimwin/img/rk61_vimwin_layer3.png)
+![The VimWin layout's numpad layer](/keyboards/royal_kludge/rk61/keymaps/vimwin/img/rk61_vimwin_layer4.png)
+![The VimWin layout's unfinished special functions layer](/keyboards/royal_kludge/rk61/keymaps/vimwin/img/rk61_vimwin_layer5.png)
 
