@@ -1,5 +1,5 @@
-#define TAPPING_TERM 200
-// #define HOLD_ON_OTHER_KEY_PRESS
+#define TAPPING_TERM 150
+#define RETRO_TAPPING
 #define MK_COMBINED
 
 /* Copyright 2015-2023 Jack Humbert
