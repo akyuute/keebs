@@ -4,9 +4,9 @@ enum planck_layers { _QWERTY, _MVMT, _SYMB, _NUM, _MOUSE, _MEDIA, _ADJUST, _COLE
 
 #define LS LSFT_T
 #define RS RSFT_T
+#define SG SGUI_T
 #define LG LGUI_T
 #define RG RGUI_T
-#define SG SGUI_T
 #define LC LCTL_T
 #define RC RCTL_T
 #define LA LALT_T
@@ -22,6 +22,41 @@ enum planck_layers { _QWERTY, _MVMT, _SYMB, _NUM, _MOUSE, _MEDIA, _ADJUST, _COLE
 #define ADJUST(kc) LT(_ADJUST, kc)
 
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case MVMT(KC_SPC):
+            // The min time for rolling into a new layer determines
+            // the max time for rolling off a space.
+            return 150;
+        default:
+            return 120;
+    }
+}
+
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LS(KC_BSPC):
+            // Never emit Backspace when this Shift is held for longer than the Tap Time.
+            return false;
+        default:
+            // Emit the long-tapped key in every other case.
+            return true;
+    }
+}
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LS(KC_BSPC):
+        case SYMB(KC_ESC):
+            // Immediately activate this Shift upon another keypress.
+            return true;
+        default:
+            // Use the default tap-or-hold decision mode for any other mod-tap key.
+            return false;
+    }
+}
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_QWERTY] = LAYOUT(
@@ -29,16 +64,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Q, KC_W, KC_E, KC_R, KC_T, KC_NO,KC_NO, KC_Y, KC_U, KC_I, KC_O, KC_P,
         SG(KC_A), LG(KC_S), LA(KC_D), LC(KC_F), KC_G, KC_NO,KC_NO, KC_H, RC(KC_J), RA(KC_K), RG(KC_L), SG(KC_MINS),
         KC_Z, KC_X, KC_C, KC_V, KC_B, KC_NO,KC_NO, KC_N, KC_M, KC_COMM, KC_DOT, KC_QUOT,
-        KC_ENT, KC_NO, KC_NO, NUM(KC_BSPC), KC_LSFT, SYMB(KC_ESC),KC_ENT, MVMT(KC_SPC), MOUSE(KC_TAB), KC_NO, KC_NO, TO(_MOUSE)
+        KC_NO, KC_NO, KC_NO, NUM(KC_DEL), LS(KC_BSPC), SYMB(KC_ESC),KC_ENT, MVMT(KC_SPC), MOUSE(KC_TAB), KC_NO, KC_NO, TO(_MOUSE)
 
     ),
 
     [_SYMB] = LAYOUT(
 
         KC_AT, KC_PERC, KC_HASH, KC_DLR, KC_EQL, KC_NO,KC_NO, KC_AMPR, KC_CIRC, KC_ASTR, KC_PLUS, KC_GRV,
-        SG(KC_4), LG(KC_5), LA(KC_3), LC(KC_2), LS(KC_1), KC_NO,KC_NO, RS(KC_0), RC(KC_6), RA(KC_8), RG(KC_9), SG(KC_7),
+        SG(KC_4), LG(KC_5), LA(KC_3), LC(KC_2), KC_1, KC_NO,KC_NO, KC_0, RC(KC_6), RA(KC_8), RG(KC_9), SG(KC_7),
         KC_PIPE, KC_BSLS, KC_SCLN, KC_ENT, KC_BSPC, KC_NO,KC_NO, KC_COLN, KC_TILD, KC_SLSH, KC_EXLM, KC_QUES,
-        KC_ESC, KC_NO, KC_NO, KC_DEL, KC_LSFT, KC_TRNS,KC_BSPC, KC_SPC, MEDIA(KC_TAB), KC_NO, KC_NO, TO(0)
+        KC_NO, KC_NO, KC_NO, KC_DEL, KC_LSFT, KC_TRNS,KC_BSPC, KC_SPC, MEDIA(KC_TAB), KC_NO, KC_NO, TO(0)
 
     ),
 
@@ -47,16 +82,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_F2, KC_F5, KC_LCBR, KC_TAB, KC_RCBR, KC_NO,KC_NO, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_SPC,
         KC_DEL, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NO,KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_ENT,
         C(KC_Z), C(KC_A), C(KC_C), C(KC_V), KC_BSPC, KC_NO,KC_NO, KC_LPRN, KC_LBRC, KC_RBRC, KC_RPRN, KC_BSLS,
-        KC_TAB, KC_NO, KC_NO, KC_LSFT, KC_SPC, KC_ESC,KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, TO(0)
+        KC_NO, KC_NO, KC_NO, KC_LSFT, KC_SPC, KC_ESC,KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, TO(0)
 
     ),
 
     [_NUM] = LAYOUT(
 
-        KC_DEL,  KC_ESC, KC_LCBR, KC_UP, KC_RCBR, KC_NO,KC_NO, KC_7, KC_8, KC_9, KC_SLSH, KC_MINS,
-        KC_ENT,  KC_SPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,KC_NO, KC_4, KC_5, KC_6, KC_ASTR, KC_PLUS,
-        KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, KC_BSPC, KC_NO,KC_NO, KC_1, KC_2, KC_3, KC_DOT, KC_EQL,
-        KC_TAB,  KC_NO, KC_NO, KC_TRNS, KC_NO,KC_NO, KC_ENT, KC_0, KC_TAB, KC_NO, KC_NO, TO(0)
+        KC_DEL,  KC_ESC,    KC_LCBR, KC_UP,   KC_RCBR,  KC_NO,KC_NO,   KC_7, KC_8, KC_9,  KC_SLSH, KC_MINS,
+        KC_ENT,  KC_SPC,    KC_LEFT, KC_DOWN, KC_RGHT,  KC_NO,KC_NO,   KC_4, KC_5, KC_6,  KC_ASTR, KC_PLUS,
+        KC_LSFT, KC_LGUI,   KC_LALT, KC_LCTL, KC_BSPC,  KC_NO,KC_NO,   KC_1, KC_2, KC_3,  KC_DOT,  KC_EQL,
+        KC_NO,   KC_NO,     KC_NO,   KC_TRNS, KC_NO,    KC_NO,KC_ENT,  KC_0, KC_TAB,      KC_NO, KC_NO, TO(0)
 
     ),
 
