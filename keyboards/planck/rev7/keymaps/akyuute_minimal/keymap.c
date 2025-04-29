@@ -24,10 +24,19 @@ enum planck_layers { _QWERTY, _MVMT, _SYMB, _NUM, _MOUSE, _MEDIA, _ADJUST, _COLE
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        // The shortest time for rolling into a new layer determines
+        // the longest time for rolling off the outer layer's tap key.
         case MVMT(KC_SPC):
-            // The min time for rolling into a new layer determines
-            // the max time for rolling off a space.
             return 150;
+
+        // Alpha keys get more time to help avoid errors.
+        // The downside is that they need to be held longer to trigger.
+        case SYMB(KC_B):
+        case SYMB(KC_N):
+        case LS(KC_G):
+        case LS(KC_H):
+            return 160;
+
         default:
             return 120;
     }
@@ -63,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         KC_Q, KC_W, KC_E, KC_R, KC_T, KC_NO,KC_NO, KC_Y, KC_U, KC_I, KC_O, KC_P,
         KC_A, LG(KC_S), LA(KC_D), LC(KC_F), LS(KC_G), KC_NO,KC_NO, LS(KC_H), RC(KC_J), RA(KC_K), RG(KC_L), KC_MINS,
-        KC_Z, KC_X, KC_C, KC_V, KC_B, KC_NO,KC_NO, KC_N, KC_M, KC_COMM, KC_DOT, KC_QUOT,
+        KC_Z, KC_X, KC_C, KC_V, SYMB(KC_B), KC_NO,KC_NO, SYMB(KC_N), KC_M, KC_COMM, KC_DOT, KC_QUOT,
         KC_NO, KC_NO, KC_NO, NUM(KC_DEL), LS(KC_BSPC), SYMB(KC_ESC),KC_ENT, MVMT(KC_SPC), MOUSE(KC_TAB), KC_NO, KC_NO, TO(_MOUSE)
 
     ),
@@ -72,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
         KC_AT, KC_PERC, KC_HASH, KC_DLR, KC_EQL, KC_NO,KC_NO, KC_AMPR, KC_CIRC, KC_ASTR, KC_PLUS, KC_GRV,
         SG(KC_4), LG(KC_5), LA(KC_3), LC(KC_2), KC_1, KC_NO,KC_NO, KC_0, RC(KC_6), RA(KC_8), RG(KC_9), SG(KC_7),
-        KC_PIPE, KC_BSLS, KC_SCLN, KC_ENT, KC_BSPC, KC_NO,KC_NO, KC_COLN, KC_TILD, KC_SLSH, KC_EXLM, KC_QUES,
+        KC_PIPE, KC_EXLM, KC_SCLN, KC_ENT, KC_TRNS, KC_NO,KC_NO, KC_TRNS, KC_TILD, KC_SLSH, KC_COLN, KC_QUES,
         KC_NO, KC_NO, KC_NO, KC_DEL, KC_LSFT, KC_TRNS,KC_BSPC, KC_SPC, MEDIA(KC_TAB), KC_NO, KC_NO, TO(0)
 
     ),
