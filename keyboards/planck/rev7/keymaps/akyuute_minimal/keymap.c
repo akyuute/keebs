@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT(
 
         KC_Q, KC_W, KC_E, KC_R, KC_T, KC_NO,KC_NO, KC_Y, KC_U, KC_I, KC_O, KC_P,
-        SG(KC_A), LG(KC_S), LA(KC_D), LC(KC_F), KC_G, KC_NO,KC_NO, KC_H, RC(KC_J), RA(KC_K), RG(KC_L), SG(KC_MINS),
+        KC_A, LG(KC_S), LA(KC_D), LC(KC_F), LS(KC_G), KC_NO,KC_NO, LS(KC_H), RC(KC_J), RA(KC_K), RG(KC_L), KC_MINS,
         KC_Z, KC_X, KC_C, KC_V, KC_B, KC_NO,KC_NO, KC_N, KC_M, KC_COMM, KC_DOT, KC_QUOT,
         KC_NO, KC_NO, KC_NO, NUM(KC_DEL), LS(KC_BSPC), SYMB(KC_ESC),KC_ENT, MVMT(KC_SPC), MOUSE(KC_TAB), KC_NO, KC_NO, TO(_MOUSE)
 
