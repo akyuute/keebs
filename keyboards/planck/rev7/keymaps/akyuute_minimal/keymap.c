@@ -1,6 +1,16 @@
 #include QMK_KEYBOARD_H
 
-enum planck_layers { _QWERTY, _MVMT, _SYMB, _NUM, _MOUSE, _MEDIA, _ADJUST, _COLEMAK, _PLOVER };
+enum planck_layers {
+    _QWERTY,
+    _MVMT,
+    _SYMB,
+    _NUM,
+    _MOUSE,
+    _MEDIA,
+    _ADJUST,
+    _COLEMAK,
+    _PLOVER
+};
 
 #define LS LSFT_T
 #define RS RSFT_T
@@ -20,50 +30,6 @@ enum planck_layers { _QWERTY, _MVMT, _SYMB, _NUM, _MOUSE, _MEDIA, _ADJUST, _COLE
 #define MOUSE(kc) LT(_MOUSE, kc)
 #define MEDIA(kc) LT(_MEDIA, kc)
 #define ADJUST(kc) LT(_ADJUST, kc)
-
-
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        // The shortest time for rolling into a new layer determines
-        // the longest time for rolling off the outer layer's tap key.
-        case MVMT(KC_SPC):
-            return 150;
-
-        // Alpha keys get more time to help avoid errors.
-        // The downside is that they need to be held longer to trigger.
-        case SYMB(KC_B):
-        case SYMB(KC_N):
-        case LS(KC_G):
-        case LS(KC_H):
-            return 160;
-
-        default:
-            return 120;
-    }
-}
-
-bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LS(KC_BSPC):
-            // Never emit Backspace when this Shift is held for longer than the Tap Time.
-            return false;
-        default:
-            // Emit the long-tapped key in every other case.
-            return true;
-    }
-}
-
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LS(KC_BSPC):
-        case SYMB(KC_ESC):
-            // Immediately activate this Shift upon another keypress.
-            return true;
-        default:
-            // Use the default tap-or-hold decision mode for any other mod-tap key.
-            return false;
-    }
-}
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -124,25 +90,75 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ADJUST] = LAYOUT(
 
-        KC_TRNS, QK_BOOT, DB_TOGG, UG_TOGG, UG_NEXT, UG_HUEU, UG_HUED, UG_SATU, UG_SATD, UG_SPDU, UG_SPDD, KC_DEL,
-        KC_TRNS, EE_CLR, MU_NEXT, AU_ON, AU_OFF, AG_NORM, AG_SWAP, PDF(_QWERTY), PDF(_COLEMAK), PDF(_PLOVER), TO(0), KC_TRNS,
-        KC_TRNS, AU_PREV, AU_NEXT, MU_ON, MU_OFF, MI_ON, MI_OFF, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, TO(0)
+        QK_BOOT, DB_TOGG, UG_TOGG, UG_NEXT, UG_HUEU, KC_NO,KC_NO, UG_HUED, UG_SATU, UG_SATD, UG_SPDU, UG_SPDD, KC_DEL,
+        EE_CLR, MU_NEXT, AU_ON, AU_OFF, AG_NORM, AG_SWAP, KC_NO,KC_NO, PDF(_QWERTY), PDF(_COLEMAK), PDF(_PLOVER), TO(0), KC_NO,
+        AU_PREV, AU_NEXT, MU_ON, MU_OFF, MI_ON, KC_NO,KC_NO, MI_OFF, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, TO(0)
 
     ),
 
     [_COLEMAK] = LAYOUT(
-        KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
-        KC_ESC,  KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-        KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, KC_RSFT, MO(_MVMT),   MO(_SYMB),   KC_SPC,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+
+        KC_Q, KC_W, KC_F, KC_P, KC_G, KC_NO,KC_NO, KC_J, KC_L, KC_U, KC_Y, KC_MINS,
+        KC_A, LG(KC_R), LA(KC_S), LC(KC_T), LS(KC_D), KC_NO,KC_NO, LS(KC_H), RC(KC_N), RA(KC_E), RG(KC_I), KC_O,
+        KC_Z, KC_X, KC_C, KC_V, SYMB(KC_B), KC_NO,KC_NO, SYMB(KC_K), KC_M, KC_COMM, KC_DOT, KC_QUOT,
+        QK_REP, DM_REC1, DM_PLY1, NUM(KC_DEL), LS(KC_BSPC), SYMB(KC_ESC),KC_ENT, MVMT(KC_SPC), MOUSE(KC_TAB), DM_REC2, DM_PLY2, TO(_MOUSE)
+
     ),
 
     [_PLOVER] = LAYOUT(
+
         KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,
         KC_NO,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
         KC_NO,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        TO(0),   KC_NO,   KC_NO,   KC_C,    KC_V,    KC_NO,   KC_NO,   KC_N,    KC_M,    KC_NO,   KC_NO,   KC_NO
+        KC_NO,   KC_NO,   KC_NO,   KC_C,    KC_V,    KC_NO,   KC_NO,   KC_N,    KC_M,    KC_NO,   KC_NO,   TO(0)
+
     ),
 
 };
+
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        // The shortest time for rolling into a new layer determines
+        // the longest time for rolling off the outer layer's tap key.
+        case MVMT(KC_SPC):
+            return 150;
+
+        // Alpha keys get more time to help avoid errors.
+        // The downside is that they need to be held longer to trigger.
+        case SYMB(KC_B):
+        case SYMB(KC_N):
+        case LS(KC_G):
+        case LS(KC_H):
+            return 160;
+
+        default:
+            return 120;
+    }
+}
+
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LS(KC_BSPC):
+            // Never emit Backspace when this Shift is held for longer than the Tap Time.
+            return false;
+        default:
+            // Emit the long-tapped key in every other case.
+            return true;
+    }
+}
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LS(KC_BSPC):
+        case SYMB(KC_ESC):
+            // Immediately activate this Shift or layer switch upon another keypress.
+            return true;
+        default:
+            // Use the default tap-or-hold decision mode for any other mod-tap key.
+            return false;
+    }
+}
+
+
