@@ -2,14 +2,14 @@
 
 enum planck_layers {
     _QWERTY,
+    _COLEMAK,
+    _PLOVER,
     _MVMT,
     _SYMB,
     _NUM,
     _MOUSE,
     _MEDIA,
     _ADJUST,
-    _COLEMAK,
-    _PLOVER
 };
 
 #define LS LSFT_T
@@ -40,6 +40,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_A, LG(KC_S), LA(KC_D), LC(KC_F), LS(KC_G), KC_NO,KC_NO, LS(KC_H), RC(KC_J), RA(KC_K), RG(KC_L), KC_MINS,
         KC_Z, KC_X, KC_C, KC_V, SYMB(KC_B), KC_NO,KC_NO, SYMB(KC_N), KC_M, KC_COMM, KC_DOT, KC_QUOT,
         QK_REP, DM_REC1, DM_PLY1, NUM(KC_DEL), LS(KC_BSPC), SYMB(KC_ESC),KC_ENT, MVMT(KC_SPC), MOUSE(KC_TAB), DM_REC2, DM_PLY2, TO(_MOUSE)
+
+    ),
+
+    [_COLEMAK] = LAYOUT(
+
+        KC_Q, KC_W, KC_F, KC_P, KC_G, KC_NO,KC_NO, KC_J, KC_L, KC_U, KC_Y, KC_MINS,
+        KC_A, LG(KC_R), LA(KC_S), LC(KC_T), LS(KC_D), KC_NO,KC_NO, LS(KC_H), RC(KC_N), RA(KC_E), RG(KC_I), KC_O,
+        KC_Z, KC_X, KC_C, KC_V, SYMB(KC_B), KC_NO,KC_NO, SYMB(KC_K), KC_M, KC_COMM, KC_DOT, KC_QUOT,
+        QK_REP, DM_REC1, DM_PLY1, NUM(KC_DEL), LS(KC_BSPC), SYMB(KC_ESC),KC_ENT, MVMT(KC_SPC), MOUSE(KC_TAB), DM_REC2, DM_PLY2, TO(_MOUSE)
+
+    ),
+
+    [_PLOVER] = LAYOUT(
+
+        KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,
+        KC_NO,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
+        KC_NO,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+        KC_NO,   KC_NO,   KC_NO,   KC_C,    KC_V,    KC_NO,   KC_NO,   KC_N,    KC_M,    KC_NO,   KC_NO,   TO(0)
 
     ),
 
@@ -90,28 +108,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ADJUST] = LAYOUT(
 
-        QK_BOOT, DB_TOGG, UG_TOGG, UG_NEXT, UG_HUEU, KC_NO,KC_NO, UG_HUED, UG_SATU, UG_SATD, UG_SPDU, UG_SPDD, KC_DEL,
-        EE_CLR, MU_NEXT, AU_ON, AU_OFF, AG_NORM, AG_SWAP, KC_NO,KC_NO, PDF(_QWERTY), PDF(_COLEMAK), PDF(_PLOVER), TO(0), KC_NO,
-        AU_PREV, AU_NEXT, MU_ON, MU_OFF, MI_ON, KC_NO,KC_NO, MI_OFF, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, TO(0)
-
-    ),
-
-    [_COLEMAK] = LAYOUT(
-
-        KC_Q, KC_W, KC_F, KC_P, KC_G, KC_NO,KC_NO, KC_J, KC_L, KC_U, KC_Y, KC_MINS,
-        KC_A, LG(KC_R), LA(KC_S), LC(KC_T), LS(KC_D), KC_NO,KC_NO, LS(KC_H), RC(KC_N), RA(KC_E), RG(KC_I), KC_O,
-        KC_Z, KC_X, KC_C, KC_V, SYMB(KC_B), KC_NO,KC_NO, SYMB(KC_K), KC_M, KC_COMM, KC_DOT, KC_QUOT,
-        QK_REP, DM_REC1, DM_PLY1, NUM(KC_DEL), LS(KC_BSPC), SYMB(KC_ESC),KC_ENT, MVMT(KC_SPC), MOUSE(KC_TAB), DM_REC2, DM_PLY2, TO(_MOUSE)
-
-    ),
-
-    [_PLOVER] = LAYOUT(
-
-        KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,    KC_1,
-        KC_NO,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
-        KC_NO,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        KC_NO,   KC_NO,   KC_NO,   KC_C,    KC_V,    KC_NO,   KC_NO,   KC_N,    KC_M,    KC_NO,   KC_NO,   TO(0)
+        QK_BOOT, DB_TOGG, UG_TOGG, UG_NEXT, UG_HUEU, KC_NO,KC_NO, UG_HUED, UG_SATU, UG_SATD, UG_SPDU, UG_SPDD,
+        MU_NEXT, AU_ON, AU_OFF, AG_NORM, AG_SWAP, KC_NO,KC_NO, PDF(_QWERTY), PDF(_COLEMAK), PDF(_PLOVER), TO(0), KC_NO,
+        AU_PREV, AU_NEXT, MU_ON, MU_OFF, KC_NO, KC_NO,KC_NO, MI_ON, MI_OFF, KC_NO, KC_NO, EE_CLR,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO,KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, TO(0)
 
     ),
 
@@ -153,12 +153,10 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LS(KC_BSPC):
         case SYMB(KC_ESC):
-            // Immediately activate this Shift or layer switch upon another keypress.
+            // Immediately activate this Shift upon another keypress.
             return true;
         default:
             // Use the default tap-or-hold decision mode for any other mod-tap key.
             return false;
     }
 }
-
-
