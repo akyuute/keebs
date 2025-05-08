@@ -91,11 +91,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MVMT] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
-        KC_APP,    KC_F2,     KC_F5,     KC_LCBR,   KC_TAB,    KC_RCBR,   KC_NO,     KC_NO,     KC_HOME,   KC_PGDN,   KC_PGUP,   KC_END,    KC_BSPC,   KC_BSPC,KC_NO,
+        KC_APP,    KC_F5,     KC_F2,     KC_LCBR,   KC_TAB,    KC_RCBR,   KC_NO,     KC_NO,     KC_HOME,   KC_PGDN,   KC_PGUP,   KC_END,    KC_BSPC,   KC_BSPC,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_TAB,    KC_DEL,    KC_LGUI,   KC_LALT,   KC_LCTL,   KC_LSFT,   KC_NO,     KC_NO,     KC_LEFT,   KC_DOWN,   KC_UP,     KC_RGHT,   KC_ENT,
+        KC_TAB,    KC_DEL,    KC_LGUI,   KC_LALT,   KC_LCTL,   KC_LSFT,   KC_NO,     KC_NO,     KC_LEFT,   KC_DOWN,   KC_UP,     KC_RGHT,   KC_ENT,    KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_TAB,    KC_ESC,    KC_LCTL,   LC(KC_A),  LC(KC_C),  LC(KC_V),  KC_BSPC,   KC_NO,     KC_NO,     KC_LPRN,   KC_LBRC,   KC_RBRC,   KC_RPRN,   KC_ENT,
+        KC_ESC, LCTL(KC_Z), LCTL(KC_A), LCTL(KC_C), LCTL(KC_V), KC_BSPC,  KC_NO,     KC_NO,     KC_LPRN,   KC_LBRC,   KC_RBRC,   KC_RPRN,   KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_LSFT,              KC_LALT,   KC_TAB,    KC_ENT,    KC_SPC,    KC_ESC,    KC_ENT,    KC_TRNS,   KC_NO,     KC_NO,     KC_NO,     KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
