@@ -14,7 +14,6 @@ enum planck_layers {
 
 #define LS LSFT_T
 #define RS RSFT_T
-#define SG SGUI_T
 #define LG LGUI_T
 #define RG RGUI_T
 #define LC LCTL_T
@@ -23,6 +22,7 @@ enum planck_layers {
 #define RA RALT_T
 #define CS(kc) LCTL(LSFT_T(kc))
 #define GC(kc) LGUI_T(LCTL_T(kc))
+#define SG SGUI_T
 
 #define SYMB(kc) LT(_SYMB, kc)
 #define MVMT(kc) LT(_MVMT, kc)
@@ -36,8 +36,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_QWERTY] = LAYOUT(
 
-        KC_Q, KC_W, KC_E, KC_R, KC_T, KC_NO,KC_NO, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_QUOT,
-        KC_A, LG(KC_S), LA(KC_D), LC(KC_F), LS(KC_G), KC_NO,KC_NO, LS(KC_H), RC(KC_J), RA(KC_K), RG(KC_L),
+        KC_Q, KC_W, KC_E, KC_R, KC_T, KC_NO,KC_NO, KC_Y, KC_U, KC_I, KC_O, KC_P,
+        SG(KC_A), LG(KC_S), LA(KC_D), LC(KC_F), LS(KC_G), KC_NO,KC_NO, LS(KC_H), RC(KC_J), RA(KC_K), RG(KC_L), SG(KC_QUOT),
         KC_Z, KC_X, KC_C, KC_V, SYMB(KC_B), KC_NO,KC_NO, SYMB(KC_N), KC_M, KC_COMM, KC_DOT, KC_MINS,
         QK_REP, DM_REC1, DM_PLY1, NUM(KC_DEL), LS(KC_BSPC), SYMB(KC_ESC),KC_ENT, MVMT(KC_SPC), MOUSE(KC_TAB), DM_REC2, DM_PLY2, TO(_MOUSE)
 
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_PINKY_REACH_CMK] = LAYOUT(
 
         KC_Q, KC_G, KC_W, KC_F, KC_P, KC_NO,KC_NO, KC_K, KC_U, KC_Y, KC_J, KC_QUOT,
-        KC_D, LG(KC_A), LA(KC_R), LC(KC_S), LS(KC_T), KC_NO,KC_NO, LS(KC_N), RC(KC_E), RA(KC_I), RG(KC_O), KC_H,
+        SG(KC_D), LG(KC_A), LA(KC_R), LC(KC_S), LS(KC_T), KC_NO,KC_NO, LS(KC_N), RC(KC_E), RA(KC_I), RG(KC_O), KC_H,
         KC_Z, KC_X, KC_C, KC_V, SYMB(KC_B), KC_NO,KC_NO, SYMB(KC_L), KC_M, KC_COMM, KC_DOT, KC_MINS,
         QK_REP, DM_REC1, DM_PLY1, NUM(KC_DEL), LS(KC_BSPC), SYMB(KC_ESC),KC_ENT, MVMT(KC_SPC), MOUSE(KC_TAB), DM_REC2, DM_PLY2, TO(_MOUSE)
 
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_MOUSE] = LAYOUT(
 
-        KC_PGUP, KC_PGDN, MS_WHLD, MS_UP, MS_WHLU, KC_NO,KC_NO, KC_NO, C(KC_TAB), C(S(KC_TAB)), KC_NO, KC_NO,
+        KC_PGUP, KC_PGDN, MS_WHLU, MS_UP, MS_WHLD, KC_NO,KC_NO, KC_NO, C(KC_TAB), C(S(KC_TAB)), KC_NO, KC_NO,
         KC_BSPC, KC_TAB, MS_LEFT, MS_DOWN, MS_RGHT, KC_NO,KC_NO, MS_BTN1, MS_BTN2, MS_BTN3, MS_ACL0, MS_ACL2,
         KC_LCTL, KC_LGUI, KC_APP, MS_WHLL, MS_WHLR, KC_NO,KC_NO, KC_SPC, MS_BTN4, MS_BTN5, KC_APP, KC_NO,
         KC_DEL, KC_NO, KC_NO, MEDIA(KC_ESC), KC_LSFT, KC_SPC,KC_ENT, KC_NO, KC_TRNS, KC_NO, KC_NO, TO(0)
