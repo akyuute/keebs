@@ -6,11 +6,19 @@ enum planck_layers {
     _PLOVER,
     _MVMT,
     _SYMB,
-    _NUM,
-    _MOUSE,
-    _MEDIA,
+    _NUMB,
+    _MOUS,
+    _MEDI,
     _ADJUST,
 };
+
+
+#define BAK KC_BSPC
+#define DEL KC_DEL
+#define ENT KC_ENT
+#define ESC KC_ESC
+#define SPC KC_SPC
+#define TAB KC_TAB
 
 #define LS LSFT_T
 #define RS RSFT_T
@@ -26,9 +34,9 @@ enum planck_layers {
 
 #define SYMB(kc) LT(_SYMB, kc)
 #define MVMT(kc) LT(_MVMT, kc)
-#define NUM(kc) LT(_NUM, kc)
-#define MOUSE(kc) LT(_MOUSE, kc)
-#define MEDIA(kc) LT(_MEDIA, kc)
+#define NUMB(kc) LT(_NUMB, kc)
+#define MOUS(kc) LT(_MOUS, kc)
+#define MEDI(kc) LT(_MEDI, kc)
 #define ADJUST(kc) LT(_ADJUST, kc)
 
 
@@ -39,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Q, KC_W, KC_E, KC_R, KC_T, KC_NO,KC_NO, KC_Y, KC_U, KC_I, KC_O, KC_P,
         SG(KC_A), LG(KC_S), LA(KC_D), LC(KC_F), LS(KC_G), KC_NO,KC_NO, LS(KC_H), RC(KC_J), RA(KC_K), RG(KC_L), SG(KC_QUOT),
         KC_Z, KC_X, KC_C, KC_V, KC_B, KC_NO,KC_NO, KC_N, KC_M, KC_COMM, KC_DOT, KC_MINS,
-        QK_REP, DM_REC1, DM_PLY1, NUM(KC_DEL), SYMB(KC_ESC), LS(KC_BSPC),MVMT(KC_SPC), SYMB(KC_ENT), MOUSE(KC_TAB), DM_REC2, DM_PLY2, TO(_MOUSE)
+        QK_AREP, QK_REP, KC_NO, NUMB(DEL), SYMB(ESC), LS(BAK),MVMT(SPC), SYMB(ENT), MOUS(TAB), KC_NO, TO(_MOUS), TO(0)
 
     ),
 
@@ -48,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Q, KC_G, KC_W, KC_F, KC_P, KC_NO,KC_NO, KC_K, KC_U, KC_Y, KC_J, KC_QUOT,
         SG(KC_D), LG(KC_A), LA(KC_R), LC(KC_S), LS(KC_T), KC_NO,KC_NO, LS(KC_N), RC(KC_E), RA(KC_I), RG(KC_O), KC_H,
         KC_Z, KC_X, KC_C, KC_V, KC_B, KC_NO,KC_NO, KC_L, KC_M, KC_COMM, KC_DOT, KC_MINS,
-        QK_REP, DM_REC1, DM_PLY1, NUM(KC_DEL), SYMB(KC_ESC), LS(KC_BSPC),MVMT(KC_SPC), SYMB(KC_ENT), MOUSE(KC_TAB), DM_REC2, DM_PLY2, TO(_MOUSE)
+        QK_AREP, QK_REP, KC_NO, NUMB(DEL), SYMB(ESC), LS(BAK),MVMT(SPC), SYMB(ENT), MOUS(TAB), KC_NO, TO(_MOUS), TO(0)
 
     ),
 
@@ -63,41 +71,41 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYMB] = LAYOUT(
 
-        KC_AT, KC_PERC, KC_HASH, KC_DLR, KC_EQL, KC_NO,KC_NO, KC_AMPR, KC_CIRC, KC_ASTR, KC_PLUS, KC_GRV,
+        KC_PERC, KC_CIRC, KC_HASH, KC_EQL, KC_AT, KC_NO,KC_NO, KC_AMPR, KC_PLUS, KC_ASTR, KC_DLR, KC_GRV,
         SG(KC_4), LG(KC_5), LA(KC_3), LC(KC_2), KC_1, KC_NO,KC_NO, KC_0, RC(KC_6), RA(KC_8), RG(KC_9), SG(KC_7),
-        KC_PIPE, KC_LPRN, KC_RPRN, KC_BSLS, KC_SCLN, KC_NO,KC_NO, KC_COLN, KC_EXLM, KC_TILD, KC_SLSH, KC_QUES,
-        KC_NO, KC_NO, KC_NO, KC_DEL, KC_TRNS, KC_BSPC,KC_BSPC, KC_TRNS, KC_TAB, KC_NO, KC_NO, TO(0)
+        KC_PIPE, KC_BSLS, KC_LCBR, KC_RCBR, KC_SCLN, KC_NO,KC_NO, KC_COLN, KC_TILD, KC_SLSH, KC_EXLM, KC_QUES,
+        DM_REC1, DM_REC2, KC_NO, KC_DEL, KC_TRNS, KC_BSPC,KC_BSPC, KC_TRNS, KC_TAB, KC_NO, KC_NO, TO(0)
 
     ),
 
     [_MVMT] = LAYOUT(
 
-        KC_F2, KC_F5, KC_LCBR, KC_TAB, KC_RCBR, KC_NO,KC_NO, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_SPC,
+        KC_F5, KC_F2, KC_TAB, KC_LCBR, KC_RCBR, KC_NO,KC_NO, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_SPC,
         KC_DEL, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NO,KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_ENT,
         C(KC_Z), C(KC_A), C(KC_C), C(KC_V), KC_SPC, KC_NO,KC_NO, KC_LPRN, KC_LBRC, KC_RBRC, KC_RPRN, KC_BSLS,
-        KC_NO, KC_NO, KC_NO, KC_ENT, KC_ESC, KC_BSPC,KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, TO(0)
+        DM_PLY1, DM_PLY2, KC_NO, KC_ENT, KC_ESC, KC_BSPC,KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, TO(0)
 
     ),
 
-    [_NUM] = LAYOUT(
+    [_NUMB] = LAYOUT(
 
         KC_DEL,  KC_ESC,    KC_LCBR, KC_UP,   KC_RCBR,  KC_NO,KC_NO,   KC_7, KC_8, KC_9,     KC_SLSH, KC_MINS,
         KC_ENT,  KC_SPC,    KC_LEFT, KC_DOWN, KC_RGHT,  KC_NO,KC_NO,   KC_4, KC_5, KC_6,     KC_ASTR, KC_PLUS,
         KC_LSFT, KC_LGUI,   KC_LALT, KC_LCTL, KC_BSPC,  KC_NO,KC_NO,   KC_1, KC_2, KC_3,     KC_DOT,  KC_EQL,
-        KC_NO,   KC_NO,     KC_NO,   KC_TRNS, KC_NO,    KC_NO,KC_ENT,  KC_0, MEDIA(KC_TAB),  KC_NO, KC_NO, TO(0)
+        KC_NO,   KC_NO,     KC_NO,   KC_TRNS, KC_NO,    KC_NO,KC_ENT,  KC_0, MEDI(TAB),  KC_NO, KC_NO, TO(0)
 
     ),
 
-    [_MOUSE] = LAYOUT(
+    [_MOUS] = LAYOUT(
 
-        KC_PGUP, KC_PGDN, MS_WHLU, MS_UP, MS_WHLD, KC_NO,KC_NO, KC_NO, C(KC_TAB), C(S(KC_TAB)), KC_NO, KC_NO,
+        KC_PGUP, KC_PGDN, MS_WHLU, MS_UP, MS_WHLD, KC_NO,KC_NO, KC_NO, C(S(TAB)), C(TAB), KC_NO, KC_NO,
         KC_BSPC, KC_TAB, MS_LEFT, MS_DOWN, MS_RGHT, KC_NO,KC_NO, MS_BTN1, MS_BTN2, MS_BTN3, MS_ACL0, MS_ACL2,
         KC_LCTL, KC_LGUI, KC_APP, MS_WHLL, MS_WHLR, KC_NO,KC_NO, KC_ENT, MS_BTN4, MS_BTN5, KC_APP, KC_NO,
-        KC_DEL, KC_NO, KC_NO, MEDIA(KC_ESC), KC_SPC, KC_LSFT,KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, TO(0)
+        KC_DEL, KC_NO, KC_NO, MEDI(ESC), KC_SPC, KC_LSFT,KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, TO(0)
 
     ),
 
-    [_MEDIA] = LAYOUT(
+    [_MEDI] = LAYOUT(
 
         KC_SLEP, KC_BRID, KC_BRIU, KC_MSTP, KC_MPRV, KC_NO,KC_NO, KC_MNXT, KC_MPLY, KC_MUTE, KC_VOLD, KC_VOLU,
         KC_F4, KC_F5, KC_F3, KC_F2, KC_F1, KC_NO,KC_NO, KC_F10, KC_F6, KC_F8, KC_F9, KC_F7,
@@ -122,7 +130,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // The shortest time for rolling into a new layer determines
         // the longest time for rolling off the outer layer's tap key.
-        case MVMT(KC_SPC):
+        case MVMT(SPC):
             return 150;
 
         // Alpha keys get more time to help avoid errors.
@@ -131,6 +139,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case SYMB(KC_N):
         case LS(KC_G):
         case LS(KC_H):
+        case LS(KC_T):
+        case LS(KC_N):
             return 160;
 
         default:
