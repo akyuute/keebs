@@ -124,15 +124,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MOUSE] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
-        KC_NO, KC_DEL, KC_NO, KC_NO, MS_LEFT, MS_RGHT, KC_NO, KC_NO, LC(LS(TAB)), KC_NO, KC_NO, LCTL(KC_TAB), KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, MS_LEFT, KC_PGUP, KC_PGDN, MS_RGHT, KC_NO, KC_NO, LC(LS(TAB)), KC_NO, KC_NO, LCTL(KC_TAB), KC_NO, KC_BSPC,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_BSPC,   KC_TAB,    MS_WHLU,   MS_UP,     MS_WHLD,   KC_PGUP,   KC_NO,     MS_BTN1,   MS_BTN2,   MS_BTN3,   MS_ACL0,   MS_ACL2,   KC_NO,     KC_NO,
+        KC_TAB, KC_DEL, KC_TAB, MS_WHLU, MS_UP, MS_WHLD, KC_NO, MS_BTN1, MS_BTN2, MS_BTN3, MS_ACL0, MS_ACL2, KC_TAB, KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_ESC,    KC_ENT,    MS_LEFT,   MS_DOWN,   MS_RGHT,   KC_PGDN,   KC_NO,     KC_SPC,    MS_BTN4,   MS_BTN5,   KC_APP,    KC_NO,     KC_NO,
+        KC_ESC, KC_BSPC, KC_ENT, MS_LEFT, MS_DOWN, MS_RGHT, KC_NO, KC_SPC, MS_BTN4, MS_BTN5, KC_APP, KC_ENT, KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
-        KC_LSFT,              KC_LCTL,   KC_NO,  MEDIA(ESC),   KC_LSFT,   KC_SPC,    KC_NO,     KC_NO,     KC_TRNS,   KC_NO,     KC_NO,     KC_RSFT,KC_NO,KC_NO,
+        KC_LSFT,              KC_LCTL, KC_TAB, MEDIA(ESC),   KC_ESC, KC_LSFT, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
-        KC_NO,     KC_NO,     KC_NO,     KC_SPC,    KC_NO,     KC_NO,     KC_NO,     TO(0)
+        KC_NO, KC_NO, KC_LALT, KC_SPC, KC_NO, KC_NO, KC_NO, TO(0)
 //     `--------------------------------------------------------------------------------------------------------------------------------------------------------------'
 
     ),
