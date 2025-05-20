@@ -77,11 +77,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYMB] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
-        KC_NO,     KC_AT,     KC_PERC,   KC_HASH,   KC_DLR,    KC_EQL,    KC_LBRC,   KC_RBRC,   KC_AMPR,   KC_CIRC,   KC_ASTR,   KC_PLUS,   KC_GRV,    KC_DEL,KC_NO,
+        KC_NO,     KC_PERC,   KC_CIRC,   KC_HASH,   KC_EQL,    KC_AT,     KC_NO,     KC_NO,     KC_AMPR,   KC_PLUS,   KC_ASTR,   KC_DLR,    KC_GRV,    KC_DEL,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_TAB, SG(KC_4), LG(KC_5), LA(KC_3), LC(KC_2), KC_1, KC_NO, KC_0, RC(KC_6), RA(KC_8), RG(KC_9), SG(KC_7), KC_PSCR, KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_ESC, KC_PIPE, KC_BSLS, KC_TILD, KC_SLSH, KC_SCLN, KC_NO, KC_LPRN, KC_COLN, KC_EXLM, KC_RPRN, KC_QUES, KC_ENT,
+        KC_ESC, KC_PIPE, KC_BSLS, KC_TILD, KC_SLSH, KC_SPC,    KC_NO, KC_SCLN, KC_COLN, KC_EXLM, KC_QUES, KC_BSPC, KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_LSFT,              DM_REC1,   DM_REC2,   KC_DEL, KC_TRNS, KC_BSPC, KC_BSPC, KC_TRNS, KC_SPC, KC_NO, KC_NO, KC_RSFT, KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
