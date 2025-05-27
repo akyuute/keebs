@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         KC_LGUI,   KC_BSPC,   MS_LEFT,   MS_DOWN,   MS_RGHT,       KC_NO, KC_NO,     MS_BTN1,   MS_BTN2,   MS_BTN3,   MS_ACL0,   MS_ACL2,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_LCTL,   KC_LALT,   KC_TAB,    MS_WHLL,   MS_WHLR,       KC_NO, KC_NO,     KC_SPC,    MS_BTN4,   MS_BTN5,   MS_BTN6,   KC_APP,
+        KC_LCTL,   KC_LALT,   MS_WHLL,   KC_TAB,    MS_WHLR,       KC_NO, KC_NO,     KC_SPC,    MS_BTN4,   MS_BTN5,   MS_BTN6,   KC_APP,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_ESC,        TO(0), LS(SPC),   KC_ENT,    KC_NO,     KC_NO,     KC_NO,     TO(0)
 //     `----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------'
