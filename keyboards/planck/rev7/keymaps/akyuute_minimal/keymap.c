@@ -166,8 +166,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
         // Alpha keys get more time to help avoid errors.
         // The downside is that they need to be held longer to trigger.
-        case SYMB(KC_B):
-        case SYMB(KC_N):
         case LS(KC_G):
         case LS(KC_H):
         case LS(KC_T):
@@ -193,7 +191,6 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LS(KC_BSPC):
-        case SYMB(KC_ESC):
             // Immediately activate this Shift upon another keypress.
             return true;
         default:
