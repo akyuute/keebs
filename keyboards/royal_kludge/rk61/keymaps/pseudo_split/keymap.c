@@ -185,15 +185,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // The shortest time for rolling into a new layer determines
         // the longest time for rolling off the outer layer's tap key.
-        case MVMT(KC_SPC):
+        case MVMT(SPC):
             return 150;
 
         // Alpha keys get more time to help avoid errors.
         // The downside is that they need to be held longer to trigger.
-        case SYMB(KC_V):
-        case SYMB(KC_M):
-        case LS(KC_G):
-        case LS(KC_H):
+        case SYMB(TAB):
+        case LS(BAK):
             return 160;
 
         default:
@@ -203,8 +201,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LS(KC_BSPC):
-            // Never emit Backspace when this Shift is held for longer than the Tap Time.
+        case LS(BAK):
+        case LG(KC_S):
+        case RG(KC_L):
+            // Never emit Backspace/GUI when this Shift/homerow mod is held for longer than the Tap Time.
             return false;
         default:
             // Emit the long-tapped key in every other case.
@@ -214,9 +214,11 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LS(KC_BSPC):
-        case SYMB(KC_ESC):
-            // Immediately activate this Shift upon another keypress.
+        case LS(BAK):
+        case SYMB(TAB):
+        case LG(KC_S):
+        case RG(KC_L):
+            // Immediately activate this Shift and layer switch upon another keypress.
             return true;
         default:
             // Use the default tap-or-hold decision mode for any other mod-tap key.
