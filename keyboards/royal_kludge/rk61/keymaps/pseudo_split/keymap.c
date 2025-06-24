@@ -78,16 +78,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYMB] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
-        KC_NO,     KC_AT,     KC_AMPR,   KC_EXLM,   KC_TAB,    KC_PERC,       KC_NO, KC_NO,     KC_CIRC,   KC_HASH,   KC_ASTR,   KC_DLR,    KC_ENT,    KC_DEL,KC_NO,
+        KC_PSCR,     KC_AT,     KC_AMPR,   KC_EXLM,   KC_TAB,    KC_PERC,       KC_NO, KC_NO,     KC_CIRC,   KC_HASH,   KC_ASTR,   KC_DLR,    KC_DEL,KC_NO,
         // KC_NO,     KC_AT, KC_PERC, KC_HASH, KC_CIRC, KC_EQL, KC_NO,KC_NO, KC_PLUS, KC_DLR, KC_ASTR, KC_AMPR, KC_GRV, KC_DEL,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_TAB, SG(KC_1),  LG(KC_2),  LA(KC_3),  LC(KC_4),  KC_5,          KC_NO,      KC_6,      RC(KC_7),  RA(KC_8),  RG(KC_9),  SG(KC_0), KC_PSCR, KC_TAB,
+        KC_TAB, SG(KC_1),  LG(KC_2),  LA(KC_3),  LC(KC_4),  KC_5,          KC_NO,      KC_6,      RC(KC_7),  RA(KC_8),  RG(KC_9),  SG(KC_0), KC_ENT,    KC_TAB,
         // KC_TAB, SG(KC_4), LG(KC_5), LA(KC_3), LC(KC_2), KC_1, KC_NO, KC_0, RC(KC_6), RA(KC_8), RG(KC_9), SG(KC_7), KC_PSCR, KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_ESC, KC_ESC,    KC_PIPE,   KC_TILD,   KC_SLSH,   KC_EQL,        KC_NO,      KC_COLN,   KC_SCLN,   KC_MINS,   KC_PLUS,   KC_QUES, KC_ENT,
         // KC_ESC, KC_PIPE, KC_BSLS, KC_LCBR, KC_RCBR, KC_SCLN, KC_NO, KC_COLN, KC_EXLM, KC_TILD, KC_SLSH, KC_QUES, KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
-        KC_LSFT,              DM_REC2,   DM_PLY2,   KC_NO,     MEDI(SPC),   LC(DEL), KC_NO,     KC_TRNS,   KC_NO,     QK_REP, QK_AREP, KC_RSFT,KC_NO,KC_NO,
+        KC_LSFT,              DM_REC2,   DM_PLY2,   KC_NO,     MEDI(SPC),   LS(BAK), KC_NO,     KC_TRNS,   KC_NO,     QK_REP, QK_AREP, KC_RSFT,KC_NO,KC_NO,
         // KC_LSFT,              QK_REP, QK_AREP, KC_DEL, KC_TRNS, KC_BSPC, KC_BSPC, KC_TRNS, KC_SPC, DM_REC1, DM_REC2, KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_LGUI,   KC_LCTL,   KC_LSFT,   KC_SPC,    KC_NO,     KC_NO,     KC_NO,     TO(0)
