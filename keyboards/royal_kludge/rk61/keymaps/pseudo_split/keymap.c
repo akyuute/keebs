@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_ESC,    KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,      KC_NO,     KC_N,      KC_M,      KC_COMM,   KC_DOT,    KC_MINS,   KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+-------------------------------------|
-        KC_LSFT,              MAC1,   MAC2,  NUMB(DEL), LC(ESC),     LS(BAK), MVMT(SPC), SYMB(TAB), MOUS(TAB), QK_REP, QK_AREP, TO(_MOUS),KC_NO,KC_NO,
+        KC_LSFT,              DM_PLY1,   DM_PLY2,   NUMB(DEL), LC(ESC),     LS(BAK), MVMT(SPC), SYMB(TAB), MOUS(TAB), QK_REP, QK_AREP, TO(_MOUS),KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_LGUI,   KC_LCTL,   MO(_MVMT),                                  KC_SPC,                          KC_DEL,    KC_RALT,   KC_RCTL,   TO(0)
 //     `--------------------------------------------------------------------------------------------------------------------------------------------------------------'
@@ -109,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_ESC, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_NO, KC_L, KC_M, KC_COMM, KC_DOT, KC_MINS, KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+-------------------------------------|
-        KC_LSFT,              MAC1,   MAC2,  NUMB(DEL), LC(ESC),     LS(BAK), MVMT(SPC), SYMB(TAB), MOUS(TAB), QK_REP, QK_AREP, TO(_MOUS),KC_NO,KC_NO,
+        KC_LSFT,              DM_PLY1,   DM_PLY2,   NUMB(DEL), LC(ESC),     LS(BAK), MVMT(SPC), SYMB(TAB), MOUS(TAB), QK_REP, QK_AREP, TO(_MOUS),KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_LGUI,   KC_LCTL,   MO(_MVMT),                                  KC_SPC,                          KC_DEL,    KC_RALT,   KC_RCTL,   TO(0)
 //     `--------------------------------------------------------------------------------------------------------------------------------------------------------------'
@@ -128,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC, KC_ESC,    KC_PIPE,   KC_TILD,   KC_SLSH,   KC_EQL,        KC_NO,      KC_COLN,   KC_SCLN,   KC_MINS,   KC_PLUS,   KC_QUES, KC_ENT,
         // KC_ESC, KC_PIPE, KC_BSLS, KC_LCBR, KC_RCBR, KC_SCLN, KC_NO, KC_COLN, KC_EXLM, KC_TILD, KC_SLSH, KC_QUES, KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
-        KC_LSFT,              MAC3,   MAC4,   KC_NO,     MEDI(SPC),   LS(BAK), KC_NO,     KC_TRNS,   KC_NO,     QK_REP, QK_AREP, KC_RSFT,KC_NO,KC_NO,
+        KC_LSFT,              MAC1,   MAC2,   KC_NO,     MEDI(SPC),   LS(BAK), KC_NO,     KC_TRNS,   KC_NO,     MAC3,   MAC4,   KC_RSFT,KC_NO,KC_NO,
         // KC_LSFT,              QK_REP, QK_AREP, KC_DEL, KC_TRNS, KC_BSPC, KC_BSPC, KC_TRNS, KC_SPC, DM_REC1, DM_REC2, KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_LGUI,   KC_LCTL,   KC_LSFT,   KC_SPC,    KC_NO,     KC_NO,     KC_NO,     TO(0)
@@ -197,7 +197,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_NO,     RGB_MOD,   RGB_HUD,   RGB_SAD,   RGB_VAD,   KC_F11,    KC_NO,     KC_F12,    RGB_VAI,   RGB_SAI,   RGB_HUI,   RGB_TOG,   KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
-        KC_LSFT,                KC_LALT,     KC_LCTL,     KC_LGUI,     KC_TRNS, MO(_AJST), QK_AREP,   QK_REP,    KC_NO,     KC_NO,     KC_NO,     KC_RSFT,KC_NO,KC_NO,
+        KC_LSFT,                DM_REC1, DM_REC2,   KC_NO,     KC_TRNS, MO(_AJST), QK_AREP,   QK_REP,    KC_NO,     KC_NO,     KC_NO,     KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_NO,     KC_NO,     KC_TRNS,   KC_MPLY,   KC_TRNS,   KC_NO,     KC_NO,     TO(0)
 //     `--------------------------------------------------------------------------------------------------------------------------------------------------------------'
