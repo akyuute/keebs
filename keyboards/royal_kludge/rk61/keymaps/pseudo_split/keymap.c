@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT, KC_HOME, KC_END, KC_F6, KC_TRNS, TO(_NUMB), KC_EQL, KC_ENT, KC_0, KC_SPC, KC_COMM, KC_RSFT,KC_NO,KC_NO,
         // KC_LSFT, KC_HOME, KC_END, KC_TRNS, KC_F6, KC_SPC, KC_ENT, KC_0, MEDIA(SPC), KC_COMM, KC_BSPC, KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
-        KC_ENT,    KC_LGUI,   KC_SPC,    KC_LSFT,   KC_TAB,    KC_NO,     KC_NO,     TO(0)
+        KC_ENT,    KC_LGUI,   KC_LSFT,   KC_SPC,    KC_TAB,    KC_NO,     KC_NO,     TO(0)
 //     `--------------------------------------------------------------------------------------------------------------------------------------------------------------'
 
     ),
@@ -152,11 +152,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
         KC_SLEP,   KC_BRID,   KC_BRIU,   KC_MRWD, KC_MSTP,   KC_MPRV,       KC_NO, KC_NO,     KC_MNXT,   KC_MPLY,   KC_MFFD, KC_VOLD,   KC_VOLU, KC_MUTE,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_NO,     KC_F1,     KC_F2,     KC_F3,     KC_F4,     KC_F5,     KC_NO,     KC_F6,    KC_F7,     KC_F8,     KC_F9,     KC_F10,     KC_NO,     KC_NO,
+        KC_NO,     SG(KC_F1), LG(KC_F2), LA(KC_F3), LC(KC_F4), LS(KC_F5), KC_NO,     RS(KC_F6), RC(KC_F7), RA(KC_F8), RG(KC_F9), SG(KC_F10), KC_NO,    KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_NO,     RGB_MOD,   RGB_HUD,   RGB_SAD,   RGB_VAD,   KC_F11,    KC_NO,     KC_F12,    RGB_VAI,   RGB_SAI,   RGB_HUI,   RGB_TOG,   KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
-        KC_NO,                KC_NO,     KC_NO,     KC_NO,     KC_TRNS, MO(_AJST), QK_AREP,   QK_REP,    KC_NO,     KC_NO,     KC_NO,     KC_RSFT,KC_NO,KC_NO,
+        KC_LSFT,                KC_LALT,     KC_LCTL,     KC_LGUI,     KC_TRNS, MO(_AJST), QK_AREP,   QK_REP,    KC_NO,     KC_NO,     KC_NO,     KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_NO,     KC_NO,     KC_TRNS,   KC_MPLY,   KC_TRNS,   KC_NO,     KC_NO,     TO(0)
 //     `--------------------------------------------------------------------------------------------------------------------------------------------------------------'
