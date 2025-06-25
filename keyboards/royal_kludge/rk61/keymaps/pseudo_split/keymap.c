@@ -40,6 +40,47 @@ enum layers {
 #define AJST(kc) LT(_AJST, kc)
 
 
+// Define macros
+enum custom_keycodes {
+    MAC1 = SAFE_RANGE,
+    MAC2,
+    MAC3,
+    MAC4,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+    case MAC1:
+        if (record->event.pressed) {
+            // when keycode MAC1 is pressed
+            SEND_STRING("MAC1 pressed");
+        } else {
+            // when keycode MAC1 is released
+        }
+        break;
+    case MAC2:
+        if (record->event.pressed) {
+            SEND_STRING("MAC2 pressed");
+        } else {
+        }
+        break;
+    case MAC3:
+        if (record->event.pressed) {
+            SEND_STRING("MAC3 pressed");
+        } else {
+        }
+        break;
+    case MAC4:
+        if (record->event.pressed) {
+            SEND_STRING("MAC4 pressed");
+        } else {
+        }
+        break;
+    }
+    return true;
+};
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
@@ -110,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT, KC_LALT, KC_TAB, KC_ENT, NUMB(ESC),   LS(ENT), KC_TRNS,   TO(_MOUS), KC_NO, KC_NO, KC_NO, KC_RSFT,KC_NO,KC_NO,
         // KC_LSFT, KC_LALT, KC_TAB, KC_ENT, KC_ESC, KC_BSPC, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
-        KC_LGUI, KC_LCTL, KC_TRNS, KC_LSFT, MO(_MEDI), KC_NO, KC_NO, TO(0)
+        KC_LGUI, KC_LCTL, KC_TRNS, KC_SPC, MO(_MEDI), KC_NO, KC_NO, TO(0)
 //     `--------------------------------------------------------------------------------------------------------------------------------------------------------------'
     ),
 
@@ -180,46 +221,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-
-// Define macros
-enum custom_keycodes {
-    MAC1 = SAFE_RANGE,
-    MAC2,
-    MAC3,
-    MAC4,
-};
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-    case MAC1:
-        if (record->event.pressed) {
-            // when keycode MAC1 is pressed
-            SEND_STRING("MAC1 pressed");
-        } else {
-            // when keycode MAC1 is released
-        }
-        break;
-    case MAC2:
-        if (record->event.pressed) {
-            SEND_STRING("MAC2 pressed");
-        } else {
-        }
-        break;
-    case MAC3:
-        if (record->event.pressed) {
-            SEND_STRING("MAC3 pressed");
-        } else {
-        }
-        break;
-    case MAC4:
-        if (record->event.pressed) {
-            SEND_STRING("MAC4 pressed");
-        } else {
-        }
-        break;
-    }
-    return true;
-};
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
