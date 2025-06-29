@@ -18,6 +18,7 @@ enum layers {
 #define ESC KC_ESC
 #define SPC KC_SPC
 #define TAB KC_TAB
+#define QUE KC_QUES
 #define QUOT KC_QUOT
 
 #define LS LSFT_T
@@ -123,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_TAB, KC_1,  LG(KC_2),  LA(KC_3),  LC(KC_4),  KC_5,          KC_NO,      KC_6,      RC(KC_7),  RA(KC_8),  RG(KC_9),  KC_0, KC_BSPC,    KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_ESC, KC_ESC,    KC_PIPE,   KC_TILD,   KC_SLSH,   KC_EQL,        KC_NO,      KC_COLN,   KC_SCLN,   KC_MINS,   KC_PLUS,   KC_QUES, KC_ENT,
+        KC_ESC, LC(ESC),    KC_PIPE,   KC_TILD,   KC_SLSH,   KC_EQL,        KC_NO,      KC_COLN,   KC_SCLN,   KC_MINS,   KC_PLUS,   LC(QUE), KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_LSFT,              MAC1,   MAC2,   KC_NO,     MEDI(ENT),   LS(SPC), KC_NO,     KC_TRNS,   KC_NO,     MAC3,   MAC4,   KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
