@@ -88,9 +88,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
-        QK_REP,    KC_Q,      KC_W,      KC_E,      KC_R,      KC_T,      KC_NO,     KC_NO,     KC_Y,      KC_U,      KC_I,      KC_O,      KC_QUOT,   KC_BSPC,KC_NO,
+        QK_REP,    KC_Q,      KC_W,      KC_E,      KC_R,      KC_T,      KC_NO,     KC_NO,     KC_Y,      KC_U,      KC_I,      KC_O,      KC_P,      KC_BSPC,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_TAB,    KC_A,      LG(KC_S),  LA(KC_D),  LC(KC_F),  KC_G,  KC_NO, KC_H,  RC(KC_J),  RA(KC_K),  RG(KC_L),  KC_P,      KC_SCLN, KC_TAB,
+        KC_TAB,    KC_A,      LG(KC_S),  LA(KC_D),  LC(KC_F),  KC_G,      KC_NO,     KC_H,      RC(KC_J),  RA(KC_K),  RG(KC_L),  KC_QUOT,   KC_SCLN,   KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_ESC,    KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,      KC_NO,     KC_N,      KC_M,      KC_COMM,   KC_DOT,    KC_MINS,   KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+-------------------------------------|
@@ -104,11 +104,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_PINKY_REACH_CMK] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
-        QK_REP,    KC_Q,      KC_G,      KC_W,      KC_F,      KC_P,      KC_NO,     KC_NO,     KC_K,      KC_U,      KC_Y,      KC_J,      KC_QUOT,   KC_BSPC,KC_NO,
+        QK_REP,    KC_Z,      KC_P,      KC_W,      KC_F,      KC_G,      KC_NO,     KC_NO,     KC_J,      KC_U,      KC_Y,      KC_K,      KC_QUOT,   KC_BSPC,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_TAB,    KC_D,      LG(KC_A),  LA(KC_R),  LC(KC_S),  KC_T,  KC_NO,     KC_N,  RC(KC_E),  RA(KC_I),  RG(KC_O),  KC_H,   KC_SCLN,      KC_TAB,
+        KC_TAB,    KC_D,      LG(KC_A),  LA(KC_S),  LC(KC_R),  KC_T,  KC_NO,     KC_H,  RC(KC_E),  RA(KC_I),  RG(KC_O),  KC_L,   KC_SCLN,      KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_ESC, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_NO, KC_L, KC_M, KC_COMM, KC_DOT, KC_MINS, KC_ENT,
+        KC_ESC, KC_Q, KC_X, KC_C, KC_V, KC_B, KC_NO, KC_N, KC_M, KC_COMM, KC_DOT, KC_MINS, KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+-------------------------------------|
         KC_LSFT,              DM_PLY1,   DM_PLY2,   NUMB(DEL), LC(ESC),     LS(BAK), MVMT(SPC), SYMB(TAB), MOUS(TAB), QK_REP, QK_AREP, TO(_MOUS),KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
