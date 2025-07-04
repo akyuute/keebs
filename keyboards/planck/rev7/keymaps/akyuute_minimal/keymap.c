@@ -40,6 +40,75 @@ enum planck_layers {
 #define AJST(kc) LT(_AJST, kc)
 
 
+// Define macros
+enum custom_keycodes {
+    MAC1 = SAFE_RANGE,
+    MAC2,
+    MAC3,
+    MAC4,
+    MAC5,
+    MAC6,
+    MAC7,
+    MAC8,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+    case MAC1:
+        if (record->event.pressed) {
+            // when keycode MAC1 is pressed
+            SEND_STRING("MAC1 pressed");
+        } else {
+            // when keycode MAC1 is released
+        }
+        break;
+    case MAC2:
+        if (record->event.pressed) {
+            SEND_STRING("MAC2 pressed");
+        } else {
+        }
+        break;
+    case MAC3:
+        if (record->event.pressed) {
+            SEND_STRING("MAC3 pressed");
+        } else {
+        }
+        break;
+    case MAC4:
+        if (record->event.pressed) {
+            SEND_STRING("MAC4 pressed");
+        } else {
+        }
+        break;
+    case MAC5:
+        if (record->event.pressed) {
+            SEND_STRING("MAC5 pressed");
+        } else {
+        }
+        break;
+    case MAC6:
+        if (record->event.pressed) {
+            SEND_STRING("MAC6 pressed");
+        } else {
+        }
+        break;
+    case MAC7:
+        if (record->event.pressed) {
+            SEND_STRING("MAC7 pressed");
+        } else {
+        }
+        break;
+    case MAC8:
+        if (record->event.pressed) {
+            SEND_STRING("MAC8 pressed");
+        } else {
+        }
+        break;
+    }
+    return true;
+};
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_QWERTY] = LAYOUT(
@@ -51,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,          KC_NO, KC_NO,     KC_N,      KC_M,      KC_COMM,   KC_DOT,    KC_MINS,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_NO,     DM_REC1,   DM_PLY1,   KC_NO,     LC(ESC),     LS(BAK), MVMT(SPC), SYMB(TAB), KC_NO,     KC_NO,     KC_NO,     TO(0)
+        KC_NO,     QK_AREP,   QK_REP,    KC_NO,     LC(ESC),     LS(BAK), MVMT(SPC), SYMB(TAB), KC_NO,     DM_PLY1,   DM_PLY2,   TO(0)
 //     `----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------'
 
     ),
@@ -79,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         KC_ESC,    KC_PIPE,   KC_TILD,   KC_SLSH,   KC_EQL,        KC_NO, KC_NO,     KC_COLN,   KC_SCLN,   KC_MINS,   KC_PLUS,   KC_QUES,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_NO,     DM_REC2,   DM_PLY2,   KC_NO,     MEDI(SPC),   LC(DEL), KC_NO,     KC_TRNS,   KC_NO,     KC_NO,     KC_NO,     TO(0)
+        MAC1,      MAC2,      MAC3,      MAC4,      MEDI(ENT),   LC(SPC), KC_NO,     KC_TRNS,   MAC5,      MAC6,      MAC7,      MAC8
 //     `----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------'
 
     ),
@@ -93,7 +162,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         C(KC_Z),   C(KC_A),   C(KC_C),   C(KC_V),   LC(SPC),       KC_NO, KC_NO,     KC_LPRN,   KC_LBRC,   KC_RBRC,   KC_RPRN,   KC_BSLS,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_NO,     QK_AREP,   QK_REP,    KC_NO,     NUMB(ESC),   LS(ENT), KC_TRNS,   TO(_MOUS), KC_NO,     KC_NO,     KC_NO,     TO(0)
+        KC_NO,     QK_AREP,   QK_REP,    KC_NO,     NUMB(ESC),   LS(ENT), KC_TRNS,   TO(_MOUS), KC_NO,     DM_PLY1,   DM_PLY2,   TO(0)
 //     `----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------'
 
     ),
@@ -107,7 +176,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         KC_DEL,    KC_LGUI,   KC_LALT,   KC_LCTL,   LS(SPC),       KC_NO, KC_NO,     KC_1,      KC_2,      KC_3,      KC_DOT,    KC_EQL,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_TRNS,       TO(0), KC_ENT,    KC_0,      KC_NO,     KC_NO,     KC_NO,     TO(0)
+        KC_NO,     QK_AREP,   QK_REP,    KC_NO,     KC_TRNS,      KC_SPC, KC_ENT,    KC_0,      KC_NO,     DM_PLY1,   DM_PLY2,   TO(0)
 //     `----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------'
 
     ),
@@ -121,7 +190,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         KC_LCTL,   KC_LALT,   MS_WHLL,   KC_TAB,    MS_WHLR,       KC_NO, KC_NO,     KC_SPC,    MS_BTN4,   MS_BTN5,   MS_BTN6,   KC_APP,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_ESC,        TO(0), LS(SPC),   KC_ENT,    KC_NO,     KC_NO,     KC_NO,     TO(0)
+        KC_NO,     QK_AREP,   QK_REP,    KC_NO,     LC(ESC),     LS(ENT), TO(0),     KC_TRNS,   KC_NO,     DM_PLY1,   DM_PLY2,   TO(0)
 //     `----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------'
 
     ),
@@ -135,7 +204,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         UG_NEXT,   UG_HUED,   UG_SATD,   UG_VALD,   KC_F11,        KC_NO, KC_NO,     KC_F12,    UG_VALU,   UG_SATU,   UG_HUEU,   UG_TOGG,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_TRNS,   MO(_AJST), QK_AREP,   QK_REP,    KC_NO,     KC_NO,     KC_NO,     TO(0)
+        KC_NO,     QK_AREP,   QK_REP,    KC_NO,     KC_TRNS,   MO(_AJST), MO(_AJST), MO(_MOUS), KC_NO,     DM_REC1,   DM_REC2,   TO(0)
 //     `----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------'
 
     ),
