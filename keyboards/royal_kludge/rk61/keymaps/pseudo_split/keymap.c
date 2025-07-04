@@ -47,6 +47,8 @@ enum custom_keycodes {
     MAC2,
     MAC3,
     MAC4,
+    MAC5,
+    MAC6,
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -74,6 +76,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case MAC4:
         if (record->event.pressed) {
             SEND_STRING("MAC4 pressed");
+        } else {
+        }
+        break;
+    case MAC5:
+        if (record->event.pressed) {
+            SEND_STRING("MAC5 pressed");
+        } else {
+        }
+        break;
+    case MAC6:
+        if (record->event.pressed) {
+            SEND_STRING("MAC6 pressed");
         } else {
         }
         break;
@@ -126,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_ESC, KC_ESC,    KC_PIPE,   KC_TILD,   KC_SLSH,   KC_EQL,        KC_NO,      KC_COLN,   KC_SCLN,   KC_MINS,   KC_PLUS,   KC_QUES, KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
-        KC_LSFT,              MAC1,   MAC2,   KC_NO,     MEDI(ENT),   LS(SPC), KC_NO,     KC_TRNS,   KC_NO,     MAC3,   MAC4,   KC_RSFT,KC_NO,KC_NO,
+        KC_LSFT,              MAC1,   MAC2,   MAC3,   MEDI(ENT),   LS(SPC), KC_NO,     KC_TRNS,   MAC4,   MAC5,   MAC6,   KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_LGUI,   KC_LCTL,   KC_LSFT,   KC_SPC,    KC_NO,     KC_NO,     KC_NO,     TO(0)
 //     `--------------------------------------------------------------------------------------------------------------------------------------------------------------'
