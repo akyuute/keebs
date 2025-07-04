@@ -59,13 +59,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_PINKY_REACH_CMK] = LAYOUT(
 
 //     ,----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------.
-        KC_Q,      KC_G,      KC_W,      KC_F,      KC_P,          KC_NO, KC_NO,     KC_K,      KC_U,      KC_Y,      KC_J,      KC_QUOT,
+        KC_Q,      KC_P,      KC_W,      KC_F,      KC_G,          KC_NO, KC_NO,     KC_J,      KC_U,      KC_Y,      KC_K,      KC_QUOT,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_D,      LG(KC_A),  LA(KC_R),  LC(KC_S),  KC_T,          KC_NO, KC_NO,     KC_N,      RC(KC_E),  RA(KC_I),  RG(KC_O),  KC_H,
+        KC_D,      LG(KC_A),  LA(KC_S),  LC(KC_R),  KC_T,          KC_NO, KC_NO,     KC_H,      RC(KC_E),  RA(KC_I),  RG(KC_O),  KC_L,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,          KC_NO, KC_NO,     KC_L,      KC_M,      KC_COMM,   KC_DOT,    KC_MINS,
+        KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,          KC_NO, KC_NO,     KC_N,      KC_M,      KC_COMM,   KC_DOT,    KC_MINS,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_NO,     DM_REC1,   DM_PLY1,   KC_NO,     LC(ESC),     LS(BAK), MVMT(SPC), SYMB(TAB), KC_NO,     KC_NO,     KC_NO,     TO(0)
+        KC_NO,     QK_AREP,   QK_REP,    KC_NO,     LC(ESC),     LS(BAK), MVMT(SPC), SYMB(TAB), KC_NO,     DM_PLY1,   DM_PLY2,   TO(0)
 //     `----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------'
 
     ),
