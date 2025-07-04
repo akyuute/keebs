@@ -184,11 +184,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MOUS] = LAYOUT(
 
 //     ,----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------.
-        KC_PGUP,   KC_PGDN,   MS_WHLU,   MS_UP,     MS_WHLD,       KC_NO, KC_NO,     KC_HOME,   C(S(TAB)), C(TAB),    KC_END,    KC_DEL,
+        KC_PGUP,   KC_PGDN,   MS_WHLU,   MS_UP,     MS_WHLD,       KC_NO, KC_NO,     KC_HOME,   S(TAB),    KC_TAB,    KC_END,    KC_DEL,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         KC_LGUI,   KC_BSPC,   MS_LEFT,   MS_DOWN,   MS_RGHT,       KC_NO, KC_NO,     MS_BTN1,   MS_BTN2,   MS_BTN3,   MS_ACL0,   MS_ACL2,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_LCTL,   KC_LALT,   MS_WHLL,   KC_TAB,    MS_WHLR,       KC_NO, KC_NO,     KC_SPC,    MS_BTN4,   MS_BTN5,   MS_BTN6,   KC_APP,
+        LA(SPC),   QK_AREP,   QK_REP,    MS_WHLL,   MS_WHLR,       KC_NO, KC_NO,     KC_SPC,    MS_BTN4,   MS_BTN5,   MS_BTN6,   KC_APP,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         KC_NO,     QK_AREP,   QK_REP,    KC_NO,     LC(ESC),     LS(ENT), TO(0),     KC_TRNS,   KC_NO,     DM_PLY1,   DM_PLY2,   TO(0)
 //     `----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------'
