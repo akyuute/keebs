@@ -241,6 +241,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case LS(BAK):
             return 160;
 
+        case LG(KC_S):
+        case RG(KC_L):
+        case LG(KC_A):
+        case RG(KC_O):
+            // Reduce risk of triggering Windows key when held slightly too long.
+            return 200;
+
         default:
             return 120;
     }
@@ -249,12 +256,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LS(BAK):
-        case LG(KC_S):
-        case RG(KC_L):
-            // Never emit Backspace/GUI when this Shift/homerow mod is held for longer than the Tap Time.
+            // Never emit Backspace when this Shift is held for longer than the Tap Time.
             return false;
         default:
-            // Emit the long-tapped key in every other case.
+            // Emit the tapped key in every other case.
             return true;
     }
 }
@@ -265,7 +270,9 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case SYMB(TAB):
         case LG(KC_S):
         case RG(KC_L):
-            // Immediately activate this Shift and layer switch upon another keypress.
+        case LG(KC_A):
+        case RG(KC_O):
+            // Immediately activate these mods upon another keypress.
             return true;
         default:
             // Use the default tap-or-hold decision mode for any other mod-tap key.
