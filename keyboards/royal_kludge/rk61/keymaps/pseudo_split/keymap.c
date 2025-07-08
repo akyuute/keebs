@@ -98,7 +98,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-
     [_QWERTY] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
@@ -234,19 +233,29 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         // the longest time for rolling off the outer layer's tap key.
         case MVMT(SPC):
             return 150;
-
-        // Alpha keys get more time to help avoid errors.
-        // The downside is that they need to be held longer to trigger.
         case SYMB(TAB):
         case LS(BAK):
             return 160;
 
+        // Alpha keys get more time to help avoid errors.
+        // The downside is that they need to be held longer to trigger.
+        case LA(KC_S):
+        case LC(KC_D):
+        case RC(KC_J):
+        case RA(KC_K):
+
+        // case LA(KC_S):
+        case LC(KC_R):
+        case RC(KC_E):
+        case RA(KC_I):
+            return 200;
+
+        // Reduce risk of triggering Windows key when held slightly too long.
         case LG(KC_S):
         case RG(KC_L):
         case LG(KC_A):
         case RG(KC_O):
-            // Reduce risk of triggering Windows key when held slightly too long.
-            return 200;
+            return 250;
 
         default:
             return 120;
@@ -268,10 +277,10 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LS(BAK):
         case SYMB(TAB):
-        case LG(KC_S):
-        case RG(KC_L):
-        case LG(KC_A):
-        case RG(KC_O):
+        // case LG(KC_S):
+        // case RG(KC_L):
+        // case LG(KC_A):
+        // case RG(KC_O):
             // Immediately activate these mods upon another keypress.
             return true;
         default:
