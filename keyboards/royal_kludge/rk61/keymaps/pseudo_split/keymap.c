@@ -181,7 +181,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MOUS] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
-        KC_PSCR, KC_PGUP,   KC_PGDN,   MS_WHLU, MS_UP, MS_WHLD, KC_NO, KC_NO, KC_HOME,   S(TAB), KC_TAB,    KC_END,    KC_BSPC, KC_DEL,KC_NO,
+        KC_PSCR, KC_PGUP,   KC_PGDN,   MS_WHLU, MS_WHLD, MS_UP, KC_NO, KC_NO, KC_HOME,   S(TAB), KC_TAB,    KC_END,    KC_BSPC, KC_DEL,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_TAB, KC_LGUI,   KC_BSPC, MS_LEFT, MS_DOWN, MS_RGHT, KC_NO, MS_BTN1, MS_BTN2, MS_BTN3, MS_ACL0, MS_ACL2, KC_TAB, KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
