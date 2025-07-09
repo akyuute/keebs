@@ -258,33 +258,36 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return 250;
 
         default:
-            return 120;
+            return 150;
     }
 }
 
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        // Never emit Backspace when this Shift is held for longer than the Tap Time.
         case LS(BAK):
-            // Never emit Backspace when this Shift is held for longer than the Tap Time.
             return false;
+        // Specifically catch Escape, which has caused issues
+        // (this made a difference in testing...)
+        case LC(ESC):
+        // Use the default tap-or-hold decision mode for any other mod-tap key.
         default:
-            // Emit the tapped key in every other case.
             return true;
     }
 }
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        // Immediately activate these mods upon another keypress.
         case LS(BAK):
         case SYMB(TAB):
         // case LG(KC_S):
         // case RG(KC_L):
         // case LG(KC_A):
         // case RG(KC_O):
-            // Immediately activate these mods upon another keypress.
             return true;
+        // Use the default tap-or-hold decision mode for any other mod-tap key.
         default:
-            // Use the default tap-or-hold decision mode for any other mod-tap key.
             return false;
     }
 }
