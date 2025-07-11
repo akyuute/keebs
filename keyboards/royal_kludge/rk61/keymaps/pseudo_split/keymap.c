@@ -248,7 +248,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case LC(KC_R):
         case RC(KC_E):
         case RA(KC_I):
-            return 200;
+            // return 200;
+            return 160;
 
         // Reduce risk of triggering Windows key when held slightly too long.
         case LG(KC_S):
@@ -266,13 +267,28 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // Never emit Backspace when this Shift is held for longer than the Tap Time.
         case LS(BAK):
-            return false;
-        // Specifically catch Escape, which has caused issues
-        // (this made a difference in testing...)
-        case LC(ESC):
+
+        case LA(KC_D):
+        case LC(KC_F):
+        case RC(KC_J):
+        case RA(KC_K):
+
+        // case LA(KC_S):
+        case LC(KC_R):
+        case RC(KC_E):
+        case RA(KC_I):
+            return true;
+
+        // Reduce risk of triggering Windows key when held slightly too long.
+        case LG(KC_S):
+        case RG(KC_L):
+        case LG(KC_A):
+        case RG(KC_O):
+            return true;
+
         // Use the default tap-or-hold decision mode for any other mod-tap key.
         default:
-            return true;
+            return false;
     }
 }
 
@@ -281,11 +297,8 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         // Immediately activate these mods upon another keypress.
         case LS(BAK):
         case SYMB(TAB):
-        // case LG(KC_S):
-        // case RG(KC_L):
-        // case LG(KC_A):
-        // case RG(KC_O):
             return true;
+
         // Use the default tap-or-hold decision mode for any other mod-tap key.
         default:
             return false;
