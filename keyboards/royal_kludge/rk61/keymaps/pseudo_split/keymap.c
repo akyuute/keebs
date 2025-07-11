@@ -265,8 +265,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        // Never emit Backspace when this Shift is held for longer than the Tap Time.
+        // Never emit these tapped keys when they are held for longer than the Tap Time.
         case LS(BAK):
+        case SYMB(TAB):
 
         case LA(KC_D):
         case LC(KC_F):
