@@ -264,13 +264,13 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
         case LS(KC_BSPC):
             return false;
 
-        case LA(KC_S):
-        case LC(KC_D):
+        case LA(KC_D):
+        case LC(KC_F):
         case RC(KC_J):
         case RA(KC_K):
 
-        // case LA(KC_S):
-        case LC(KC_R):
+        case LA(KC_R):
+        case LC(KC_S):
         case RC(KC_E):
         case RA(KC_I):
             return true;
