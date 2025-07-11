@@ -180,11 +180,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MOUS] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
-        KC_PSCR, KC_PGUP,   KC_PGDN,   MS_WHLU, MS_WHLD, MS_UP, KC_NO, KC_NO, KC_HOME,   S(TAB), KC_TAB,    KC_END,    KC_BSPC, KC_DEL,KC_NO,
+        KC_PSCR, KC_BSPC, MS_WHLL, KC_PGUP,   KC_PGDN,   MS_WHLR, KC_NO, KC_NO, KC_HOME,   S(TAB), KC_TAB,    KC_END,    KC_BSPC, KC_DEL,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_TAB, KC_LGUI,   KC_BSPC, MS_LEFT, MS_DOWN, MS_RGHT, KC_NO, MS_BTN1, MS_BTN2, MS_BTN3, MS_ACL0, MS_ACL2, KC_TAB, KC_TAB,
+        KC_TAB, QK_AREP,   QK_REP,    MS_WHLU,   MS_UP, MS_WHLD, KC_NO, MS_BTN1, MS_BTN2, MS_BTN3, MS_ACL0, MS_ACL2, KC_TAB, KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_ESC, LA(SPC),   QK_AREP,   QK_REP,    MS_WHLL,   MS_WHLR, KC_NO, KC_SPC, MS_BTN4, MS_BTN5, MS_BTN6, KC_APP, KC_ENT,
+        KC_ESC, KC_LGUI,   LA(SPC),   MS_LEFT, MS_DOWN, MS_RGHT, KC_NO, KC_SPC, MS_BTN4, MS_BTN5, MS_BTN6, KC_APP, KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_LSFT,              DM_PLY1,   DM_PLY2,   KC_NO,     LC(ESC),     LS(ENT), TO(0),     KC_TRNS,   KC_ENT,    QK_REP,    QK_AREP,   KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
