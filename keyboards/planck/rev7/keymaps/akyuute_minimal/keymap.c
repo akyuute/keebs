@@ -235,16 +235,23 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
         // Alpha keys get more time to help avoid errors.
         // The downside is that they need to be held longer to trigger.
-        case LS(KC_G):
-        case LS(KC_H):
-            return 160;
+        case LA(KC_S):
+        case LC(KC_D):
+        case RC(KC_J):
+        case RA(KC_K):
 
+        // case LA(KC_S):
+        case LC(KC_R):
+        case RC(KC_E):
+        case RA(KC_I):
+            return 200;
+
+        // Reduce risk of triggering Windows key when held slightly too long.
         case LG(KC_S):
         case RG(KC_L):
         case LG(KC_A):
         case RG(KC_O):
-            // Reduce risk of triggering Windows key when held slightly too long.
-            return 200;
+            return 250;
 
         default:
             return 120;
@@ -257,30 +264,39 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
         case LS(KC_BSPC):
             return false;
 
-        // Prefer GUI... Maybe unnecessary?
+        case LA(KC_S):
+        case LC(KC_D):
+        case RC(KC_J):
+        case RA(KC_K):
+
+        // case LA(KC_S):
+        case LC(KC_R):
+        case RC(KC_E):
+        case RA(KC_I):
+            return true;
+
+        // Reduce risk of triggering Windows key when held slightly too long.
         case LG(KC_S):
         case RG(KC_L):
         case LG(KC_A):
         case RG(KC_O):
-            return false;
+            return true;
 
+        // Use the default tap-or-hold decision mode for any other mod-tap key.
         default:
-            // Emit the tapped key in every other case.
             return true;
     }
 }
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        // Immediately activate these mods upon another keypress.
         case LS(KC_BSPC):
-        case LG(KC_S):
-        case RG(KC_L):
-        case LG(KC_A):
-        case RG(KC_O):
-            // Immediately activate these mods upon another keypress.
+        case SYMB(TAB):
             return true;
+
+        // Use the default tap-or-hold decision mode for any other mod-tap key.
         default:
-            // Use the default tap-or-hold decision mode for any other mod-tap key.
             return false;
     }
 }
