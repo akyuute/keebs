@@ -268,7 +268,9 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
         // Never emit these tapped keys when they are held for longer than the Tap Time.
         case LS(BAK):
         case SYMB(TAB):
+            return false;
 
+        // Allow slower typing for these keys.
         case LA(KC_D):
         case LC(KC_F):
         case RC(KC_J):

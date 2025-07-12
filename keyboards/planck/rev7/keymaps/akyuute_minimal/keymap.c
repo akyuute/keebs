@@ -265,6 +265,7 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
         case SYMB(TAB):
             return false;
 
+        // Allow slower typing for these keys.
         case LA(KC_D):
         case LC(KC_F):
         case RC(KC_J):
