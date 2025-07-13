@@ -251,7 +251,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case RG(KC_L):
         case LG(KC_A):
         case RG(KC_O):
-            return 250;
+            return 180;
 
         default:
             return 120;
