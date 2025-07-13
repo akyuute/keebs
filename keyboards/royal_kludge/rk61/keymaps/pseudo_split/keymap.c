@@ -248,7 +248,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case LC(KC_R):
         case RC(KC_E):
         case RA(KC_I):
-            // return 200;
             return 160;
 
         // Reduce risk of triggering Windows key when held slightly too long.
@@ -256,7 +255,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case RG(KC_L):
         case LG(KC_A):
         case RG(KC_O):
-            return 250;
+            return 200;
 
         default:
             return 150;
