@@ -142,11 +142,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYMB] = LAYOUT(
 
 //     ,----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------.
-        KC_AT,     KC_AMPR,   KC_EXLM,   KC_TAB,    KC_PERC,       KC_NO, KC_NO,     KC_CIRC,   KC_HASH,   KC_ASTR,   KC_DLR,    KC_GRV,
+        KC_AT,     KC_AMPR,   KC_EXLM,   KC_TAB,    KC_PERC,       KC_NO, KC_NO,     KC_CIRC,   KC_HASH,   KC_ASTR,   KC_DLR,    KC_PLUS,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         SG(KC_1),  LG(KC_2),  LA(KC_3),  LC(KC_4),  KC_5,          KC_NO, KC_NO,     KC_6,      RC(KC_7),  RA(KC_8),  RG(KC_9),  SG(KC_0),
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_ESC,    KC_PIPE,   KC_TILD,   KC_SLSH,   KC_QUES,       KC_NO, KC_NO,     KC_MINS,   KC_PLUS,   KC_COMM,   KC_DOT,    KC_EQL,
+        KC_ESC,    KC_PIPE,   KC_TILD,   KC_SLSH,   KC_QUES,       KC_NO, KC_NO,     KC_MINS,   KC_COLN,   KC_COMM,   KC_DOT,    KC_EQL,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         MAC1,      MAC2,      MAC3,      MAC4,      MEDI(SPC),   LS(ENT), KC_NO,     KC_TRNS,   MAC5,      MAC6,      MAC7,      MAC8
 //     `----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------'
@@ -156,9 +156,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MVMT] = LAYOUT(
 
 //     ,----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------.
-        KC_F5,     KC_F2,     KC_PGUP,   KC_TAB,    KC_PGDN,       KC_NO, KC_NO,     KC_HOME,   KC_LCBR,   KC_RCBR,   KC_END,    KC_BSPC,
+        KC_F5,     KC_F2,     KC_PGUP,   KC_TAB,    KC_PGDN,       KC_NO, KC_NO,     KC_HOME,   KC_LCBR,   KC_RCBR,   KC_END,    KC_GRV,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        SG(DEL),   KC_LGUI,   KC_LALT,   KC_LCTL,   KC_LSFT,       KC_NO, KC_NO,     KC_LEFT,   KC_DOWN,   KC_UP,     KC_RGHT,   KC_ENT,
+        SG(DEL),   KC_LGUI,   KC_LALT,   KC_LCTL,   RS(BAK),       KC_NO, KC_NO,     KC_LEFT,   KC_DOWN,   KC_UP,     KC_RGHT,   KC_ENT,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         C(KC_Z),   C(KC_A),   C(KC_C),   C(KC_V),   LC(SPC),       KC_NO, KC_NO,     KC_LPRN,   KC_LBRC,   KC_RBRC,   KC_RPRN,   KC_BSLS,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
@@ -262,6 +262,7 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // Never emit these tapped keys when they are held for longer than the Tap Time.
         case SYMB(TAB):
+        case RS(BAK):
             return false;
 
         // Allow slower typing for these keys.
