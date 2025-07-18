@@ -105,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_TAB,    KC_A,      LG(KC_S),  LA(KC_D),  LC(KC_F),  KC_G,      KC_NO,     KC_H,      RC(KC_J),  RA(KC_K),  RG(KC_L),  KC_QUOT,   KC_SCLN,   KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_ESC,    KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,      KC_NO,     KC_N,      KC_M,      KC_COMM,   KC_DOT,    KC_MINS,   KC_ENT,
+        KC_ESC,    KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,      KC_NO,     KC_N,      KC_M,      KC_COMM,   KC_DOT,    KC_SCLN,   KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+-------------------------------------|
         KC_LSFT,              DM_PLY1,   DM_PLY2,   NUMB(TAB), LC(ESC),     LS(BAK), MVMT(SPC), SYMB(TAB), MOUS(TAB), QK_REP, QK_AREP, TO(_MOUS),KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
@@ -117,11 +117,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_PINKY_REACH_CMK] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
-        KC_PSCR,   KC_Z,      KC_Q,      KC_W,      KC_F,      KC_P,      KC_NO,     KC_NO,     KC_J,      KC_U,      KC_Y,      KC_DOT,    KC_MINS,   KC_BSPC,KC_NO,
+        KC_PSCR,   KC_Z,      KC_Q,      KC_W,      KC_F,      KC_P,      KC_NO,     KC_NO,     KC_J,      KC_U,      KC_Y,      KC_QUOT,   KC_SCLN,   KC_BSPC,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_TAB,    KC_B,      LG(KC_A),  LA(KC_R),  LC(KC_S),  KC_T,      KC_NO,     KC_N,      RC(KC_E),  RA(KC_I),  RG(KC_O),  KC_COMM,   KC_SCLN,   KC_TAB,
+        KC_TAB,    KC_B,      LG(KC_A),  LA(KC_R),  LC(KC_S),  KC_T,      KC_NO,     KC_N,      RC(KC_E),  RA(KC_I),  RG(KC_O),  KC_COMM,   KC_MINS,   KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_ESC, KC_X, KC_D, KC_C, KC_V, KC_G, KC_NO, KC_H, KC_M, KC_K, KC_L,  KC_QUOT, KC_ENT,
+        KC_ESC, KC_X, KC_D, KC_C, KC_V, KC_G, KC_NO, KC_H, KC_M, KC_K, KC_L,  KC_DOT, KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+-------------------------------------|
         KC_LSFT,              DM_PLY1,   DM_PLY2,   NUMB(TAB), LC(ESC),     LS(BAK), MVMT(SPC), SYMB(TAB), MOUS(TAB), QK_REP, QK_AREP, TO(_MOUS),KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
@@ -133,11 +133,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYMB] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
-        KC_PSCR,     KC_AT,     KC_AMPR,   KC_EXLM,   KC_TAB,    KC_PERC,       KC_NO, KC_NO,     KC_CIRC,   KC_HASH,   KC_ASTR,   KC_DLR,    KC_GRV, KC_DEL,KC_NO,
+        KC_PSCR,     KC_AT,     KC_AMPR,   KC_EXLM,   KC_TAB,    KC_PERC,       KC_NO, KC_NO,     KC_CIRC,   KC_HASH,   KC_ASTR,   KC_DLR,    KC_PLUS, KC_DEL,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_TAB, KC_1,  LG(KC_2),  LA(KC_3),  LC(KC_4),  KC_5,          KC_NO,      KC_6,      RC(KC_7),  RA(KC_8),  RG(KC_9),  KC_0, KC_BSPC,    KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_ESC, KC_ESC,    KC_PIPE,   KC_TILD,   KC_SLSH,   KC_EQL,        KC_NO,      KC_COLN,   KC_SCLN,   KC_MINS,   KC_PLUS,   KC_QUES, KC_ENT,
+        KC_ESC, KC_ESC,    KC_PIPE,   KC_TILD,   KC_SLSH,   KC_QUES,   KC_NO,     KC_MINS,   KC_COLN,   KC_COMM,   KC_DOT,   KC_EQL,     KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
         KC_LSFT,              MAC1,   MAC2,   MAC3,   MEDI(SPC),   LS(ENT), KC_NO,     KC_TRNS,   MAC4,   MAC5,   MAC6,   KC_RSFT,KC_NO,KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
@@ -149,9 +149,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MVMT] = LAYOUT_all(
 
 //     ,----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------.
-        KC_APP, KC_F5,     KC_F2,     KC_PGUP,   KC_TAB,    KC_PGDN,       KC_NO, KC_NO,     KC_HOME,   KC_LCBR,   KC_RCBR,   KC_END,    KC_BSPC, KC_DEL, KC_NO,
+        KC_APP, KC_F5,     KC_F2,     KC_PGUP,   KC_TAB,    KC_PGDN,       KC_NO, KC_NO,     KC_HOME,   KC_LCBR,   KC_RCBR,   KC_END,    KC_GRV, KC_DEL, KC_NO,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
-        KC_TAB, SG(DEL),   KC_LGUI,   KC_LALT,   KC_LCTL,   KC_LSFT,       KC_NO,      KC_LEFT,   KC_DOWN,   KC_UP,     KC_RGHT,   KC_ENT, KC_BSPC, KC_TAB,
+        KC_TAB, SG(DEL),   KC_LGUI,   KC_LALT,   KC_LCTL,   RS(BAK),       KC_NO,      KC_LEFT,   KC_DOWN,   KC_UP,     KC_RGHT,   KC_ENT, KC_BSPC, KC_TAB,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+---------------|
         KC_ESC, C(KC_Z),   C(KC_A),   C(KC_C),   C(KC_V),   LC(SPC),       KC_NO,      KC_LPRN,   KC_LBRC,   KC_RBRC,   KC_RPRN,   KC_BSLS,   KC_ENT,
 //     |----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+--------------------------|
@@ -265,6 +265,7 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // Never emit these tapped keys when they are held for longer than the Tap Time.
         case SYMB(TAB):
+        case RS(BAK):
             return false;
 
         // Allow slower typing for these keys.
