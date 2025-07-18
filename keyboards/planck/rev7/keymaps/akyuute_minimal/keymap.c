@@ -128,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_PINKY_REACH_CMK] = LAYOUT(
 
 //     ,----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------.
-        KC_Z,      KC_Q,      KC_W,      KC_F,      KC_P,          KC_NO, KC_NO,     KC_J,      KC_U,      KC_Y,      KC_QUOT,   KC_MINS,
+        KC_Z,      KC_Q,      KC_W,      KC_F,      KC_P,          KC_NO, KC_NO,     KC_J,      KC_U,      KC_Y,      KC_QUOT,   KC_ENT,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         KC_B,      LG(KC_A),  LA(KC_R),  LC(KC_S),  KC_T,          KC_NO, KC_NO,     KC_N,      RC(KC_E),  RA(KC_I),  RG(KC_O),  KC_COMM,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
