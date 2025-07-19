@@ -142,11 +142,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYMB] = LAYOUT(
 
 //     ,----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------.
-        KC_AT,     KC_AMPR,   KC_EXLM,   KC_TAB,    KC_PERC,       KC_NO, KC_NO,     KC_CIRC,   KC_HASH,   KC_ASTR,   KC_DLR,    KC_PLUS,
+        KC_AT,     KC_AMPR,   KC_EXLM,   KC_TAB,    KC_PERC,       KC_NO, KC_NO,     KC_CIRC,   KC_HASH,   KC_ASTR,   KC_DLR,    KC_SCLN,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         SG(KC_1),  LG(KC_2),  LA(KC_3),  LC(KC_4),  KC_5,          KC_NO, KC_NO,     KC_6,      RC(KC_7),  RA(KC_8),  RG(KC_9),  SG(KC_0),
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
-        KC_ESC,    KC_PIPE,   KC_TILD,   KC_SLSH,   KC_QUES,       KC_NO, KC_NO,     KC_MINS,   KC_COLN,   KC_COMM,   KC_DOT,    KC_EQL,
+        KC_PIPE,   KC_PLUS,   KC_TILD,   KC_SLSH,   KC_QUES,       KC_NO, KC_NO,     KC_MINS,   KC_COLN,   KC_COMM,   KC_DOT,    KC_EQL,
 //     |----------+----------+----------+----------+----------+                     +----------+----------+----------+----------+----------|
         MAC1,      MAC2,      MAC3,      MAC4,      MEDI(SPC),   LS(ENT), KC_NO,     KC_TRNS,   MAC5,      MAC6,      MAC7,      MAC8
 //     `----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------'
