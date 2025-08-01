@@ -244,14 +244,14 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case LC(KC_R):
         case RC(KC_E):
         case RA(KC_I):
-            return 200;
+            return 160;
 
         // Reduce risk of triggering Windows key when held slightly too long.
         case LG(KC_S):
         case RG(KC_L):
         case LG(KC_A):
         case RG(KC_O):
-            return 180;
+            return 200;
 
         default:
             return 120;
@@ -262,6 +262,7 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // Never emit these tapped keys when they are held for longer than the Tap Time.
         case SYMB(TAB):
+        case LS(BAK):
         case RS(BAK):
             return false;
 
