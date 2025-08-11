@@ -5,6 +5,7 @@ enum layers {
     _QWERTY,
     _PINKY_REACH_CMK,
     _NORMIE,
+    _NORMIE_FN,
     _SYMB,
     _MVMT,
     _NUMB,
