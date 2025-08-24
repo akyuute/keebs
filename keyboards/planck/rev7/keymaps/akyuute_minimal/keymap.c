@@ -228,12 +228,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        // The shortest time for rolling into a new layer determines
-        // the longest time for rolling off the outer layer's tap key.
+        // Bear in mind that the shorstest time for a hold is the longest time for a roll!
         case MVMT(SPC):
             return 150;
 
-        // Alpha keys get more time to help avoid errors.
+        // Alpha keys get more time to help avoid accidental holds when rolling.
         // The downside is that they need to be held longer to trigger.
         case LA(KC_D):
         case LC(KC_F):
@@ -244,7 +243,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case LC(KC_S):
         case RC(KC_E):
         case RA(KC_I):
-            return 160;
+            return 200;
 
         // Reduce risk of triggering Windows key when held slightly too long.
         case LG(KC_S):
