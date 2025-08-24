@@ -235,13 +235,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
         // Alpha keys get more time to help avoid errors.
         // The downside is that they need to be held longer to trigger.
-        case LA(KC_S):
-        case LC(KC_D):
+        case LA(KC_D):
+        case LC(KC_F):
         case RC(KC_J):
         case RA(KC_K):
 
-        // case LA(KC_S):
-        case LC(KC_R):
+        case LA(KC_R):
+        case LC(KC_S):
         case RC(KC_E):
         case RA(KC_I):
             return 160;
