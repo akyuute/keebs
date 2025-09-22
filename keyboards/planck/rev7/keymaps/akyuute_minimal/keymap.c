@@ -260,6 +260,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // Never emit these tapped keys when they are held for longer than the Tap Time.
+        case MVMT(SPC):
         case SYMB(TAB):
         case LS(BAK):
         case RS(BAK):
